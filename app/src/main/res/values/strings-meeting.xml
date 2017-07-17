@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NeteaseLive</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="my_classes">我的在线教育</string>
+
+    <string name="interaction">互动</string>
+    <string name="demo_name">云信在线教育Demo</string>
+    <string name="enter_room">进入房间</string>
+    <string name="create_room">创建房间</string>
+    <string name="search_room">搜索房间</string>
+    <string name="room_name">房间名称</string>
+    <string name="enter_room_id">请输入房间ID号</string>
+    <string name="logout_confirm">确定离开房间吗？</string>
+    <string name="no_data">暂无数据</string>
+    <string name="chat_room_message">讨论</string>
+    <string name="chat_room_online_people">成员</string>
+    <string name="chat_room_rts">白板</string>
+    <string name="chat_room_apply">举手</string>
+    <string name="speeching">%s正在发言...</string>
+    <string name="hands_up">举手</string>
+    <string name="give_up">放弃举手</string>
+    <string name="applying">申请成功，等待主播安排</string>
+    <string name="speaking">当前轮到你发言</string>
+    <string name="kick_out_meeting">请出会议</string>
+    <string name="kick_out_meeting_success">请出会议成功</string>
+    <string name="kick_out_by_master">你已被主持人请出会议</string>
+    <string name="meeting_closed">主持人已经结束了会议</string>
+    <string name="speak_reject">你已被主持人取消发言</string>
+    <string name="agree_to_interaction">允许互动</string>
+    <string name="being_interactive">结束互动</string>
+    <string name="cancel_permission_confirm">确定取消该用户的互动权限？</string>
+    <string name="interacting">互动中</string>
+    <string name="operation_confirm">操作确认</string>
+    <string name="exit_interaction">确定退出互动么？</string>
+    <string name="exit">退出</string>
+
+    <!-- 白板 -->
+    <string name="clear_all">全部清空</string>
+    <string name="play_back">上一步</string>
+    <string name="callee_reject">对方拒绝了本次请求</string>
+    <string name="target_has_end_session">对方结束白板演示</string>
+    <string name="join_tip">加入互动后可在上方涂鸦</string>
+    <string name="rts_record">多人白板录制</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+
+    <!-- 音视频 -->
+    <string name="avchat_pip">互动直播画中画模式</string>
+    <string name="floating_right_vertical">右侧纵排浮窗</string>
+    <string name="floating_left_vertical">左侧纵排浮窗</string>
+    <string name="split_screen">切分屏幕</string>
+    <string name="split_screen_scaling">切分屏幕，画面缩放</string>
+    <string name="audio_effect_mode">降噪处理</string>
+    <string name="platform_builtin">优先使用平台内置的语音处理</string>
+    <string name="sdk_builtin">优先使用SDK内置的语音处理</string>
+    <string name="disable_audio_effect">禁用语音处理</string>
+
+    <!-- 文档 -->
+    <string name="file_list">文档库</string>
+    <string name="use">使用</string>
+    <string name="delete">刪除</string>
+    <string name="downloading">下载中...</string>
+    <string name="retry">重试</string>
+    <string name="download_to_use">下载使用</string>
+    <string name="file_footer_tip">可在教育DEMO的PC端上传文档，在移动端下载使用</string>
+    <string name="confirm_to_delete">确认删除这个文件么？</string>
+    <string name="confirm_to_close_file_share">确定关闭文档，回到纯白板模式么？</string>
+    <string name="close_file_share">关闭文档</string>
+    <string name="file_loading">加载中...</string>
+    <string name="failed_to_retry">加载失败！点击重试</string>
+</resources>

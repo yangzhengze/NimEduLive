@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wujie">#2b2b2b</color>
+    <color name="color_black_666666">#666666</color>
+    <color name="color_message_default_bg">#e9ecf0</color>
+    <color name="im_list_select_hover">#dbdbdb</color>
+
+    <!-- 调色盘 -->
+    <color name="color_red_d1021c">#d1021c</color>
+    <color name="color_yellow_fddc01">#fddc01</color>
+    <color name="color_green_7dd21f">#7dd21f</color>
+    <color name="color_blue_228bf7">#228bf7</color>
+    <color name="color_purple_9b0df5">#9b0df5</color>
+    <color name="color_white_cccccc">#cccccc</color>
+</resources>

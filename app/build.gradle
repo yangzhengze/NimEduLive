@@ -1,15 +1,37 @@
 apply plugin: 'com.android.application'
 
+def getGitVersion() {
+    try {
+        return 'git rev-parse --short HEAD'.execute().text.trim()
+    } catch (Throwable th) {
+        return "";
+    }
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.0"
+    //NimHttpClient
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.vitek.neteaselive"
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "GIT_REVISION", "\"${getGitVersion()}\""
+        buildConfigField "String", "BUILD_DATE", "\"${new Date().toLocaleString()}\"";
+        //Error:Execution failed for task ':app:transformClassesWithDexForDebug'.
+        //> com.android.build.api.transform.TransformException: com.android.ide.common.process.ProcessException:
+        // java.util.concurrent.ExecutionException: java.lang.RuntimeException: Translation has been interrupted
+//        multiDexEnabled true
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters "armeabi-v7a", "x86","arm64-v8a","x86_64"
+        }
     }
     buildTypes {
         release {
@@ -17,14 +39,46 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-allprojects {
-    repositories {
-        jcenter() // 或者 mavenCentral()
+//    sourceSets {
+//        main {
+//            manifest.srcFile 'AndroidManifest.xml'
+//            java.srcDirs = ['src']
+//            resources.srcDirs = ['src']
+//            aidl.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+//            res.srcDirs = ['res','res-im','res-ptr']
+//            assets.srcDirs = ['assets']
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+    sourceSets.main {
+        jniLibs.srcDirs 'src/main/libs' // 动态库和jar的存放路径
+        jni.srcDirs = [] // This prevents the auto generation of Android.mk
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dexOptions {
+        incremental true
+        preDexLibraries false
+        jumboMode true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 }
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -32,4 +86,11 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+//    // 基础模块
+//    compile 'com.netease.nimlib:basesdk:4.0.0'
+//    // 音视频模块(版本号必须和基础模块一样)
+//    compile 'com.netease.nimlib:avchat:4.0.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.alibaba:fastjson:1.2.35'
+    compile files('libs/butterknife-7.0.1.jar')
 }
